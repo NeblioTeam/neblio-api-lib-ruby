@@ -1,6 +1,6 @@
 # SwaggerClient::NTP1Api
 
-All URIs are relative to *https://ntp1node.nebl.io:1443*
+All URIs are relative to *https://ntp1node.nebl.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_token_id**](NTP1Api.md#get_token_id) | **GET** /ntp1/tokenid/{tokensymbol} | Returns the tokenId representing a token
 [**get_token_metadata_of_issuance**](NTP1Api.md#get_token_metadata_of_issuance) | **GET** /ntp1/tokenmetadata/{tokenid} | Get Issuance Metadata of Token
 [**get_token_metadata_of_utxo**](NTP1Api.md#get_token_metadata_of_utxo) | **GET** /ntp1/tokenmetadata/{tokenid}/{utxo} | Get UTXO Metadata of Token
+[**get_transaction_info**](NTP1Api.md#get_transaction_info) | **GET** /ntp1/transactioninfo/{txid} | Information On an NTP1 Transaction
 [**issue_token**](NTP1Api.md#issue_token) | **POST** /ntp1/issue | Builds a transaction that issues a new NTP1 Token
 [**send_token**](NTP1Api.md#send_token) | **POST** /ntp1/sendtoken | Builds a transaction that sends an NTP1 Token
 
@@ -255,7 +256,7 @@ No authorization required
 
 Get Issuance Metadata of Token
 
-Returns the metadata associated with a token at time of issuance.  
+Returns the metadata associated with a token at time of issuance. 
 
 ### Example
 ```ruby
@@ -335,6 +336,53 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetTokenMetadataResponse**](GetTokenMetadataResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **get_transaction_info**
+> GetTransactionInfoResponse get_transaction_info(txid)
+
+Information On an NTP1 Transaction
+
+Returns detailed information regarding an NTP1 transaction. 
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::NTP1Api.new
+
+txid = "txid_example" # String | Neblio txid to get information on.
+
+
+begin
+  #Information On an NTP1 Transaction
+  result = api_instance.get_transaction_info(txid)
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling NTP1Api->get_transaction_info: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **txid** | **String**| Neblio txid to get information on. | 
+
+### Return type
+
+[**GetTransactionInfoResponse**](GetTransactionInfoResponse.md)
 
 ### Authorization
 
