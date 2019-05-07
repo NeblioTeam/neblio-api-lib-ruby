@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**testnet_get_address_info**](TestnetNTP1Api.md#testnet_get_address_info) | **GET** /testnet/ntp1/addressinfo/{address} | Information On a Neblio Address
 [**testnet_get_token_holders**](TestnetNTP1Api.md#testnet_get_token_holders) | **GET** /testnet/ntp1/stakeholders/{tokenid} | Get Addresses Holding a Token
 [**testnet_get_token_id**](TestnetNTP1Api.md#testnet_get_token_id) | **GET** /testnet/ntp1/tokenid/{tokensymbol} | Returns the tokenId representing a token
-[**testnet_get_token_metadata_of_issuance**](TestnetNTP1Api.md#testnet_get_token_metadata_of_issuance) | **GET** /testnet/ntp1/tokenmetadata/{tokenid} | Get Issuance Metadata of Token
+[**testnet_get_token_metadata**](TestnetNTP1Api.md#testnet_get_token_metadata) | **GET** /testnet/ntp1/tokenmetadata/{tokenid} | Get Metadata of Token
 [**testnet_get_token_metadata_of_utxo**](TestnetNTP1Api.md#testnet_get_token_metadata_of_utxo) | **GET** /testnet/ntp1/tokenmetadata/{tokenid}/{utxo} | Get UTXO Metadata of Token
 [**testnet_get_transaction_info**](TestnetNTP1Api.md#testnet_get_transaction_info) | **GET** /testnet/ntp1/transactioninfo/{txid} | Information On an NTP1 Transaction
 [**testnet_issue_token**](TestnetNTP1Api.md#testnet_issue_token) | **POST** /testnet/ntp1/issue | Builds a transaction that issues a new NTP1 Token
@@ -241,12 +241,12 @@ No authorization required
 
 
 
-# **testnet_get_token_metadata_of_issuance**
-> GetTokenMetadataResponse testnet_get_token_metadata_of_issuance(tokenid)
+# **testnet_get_token_metadata**
+> GetTokenMetadataResponse testnet_get_token_metadata(tokenid)
 
-Get Issuance Metadata of Token
+Get Metadata of Token
 
-Returns the metadata associated with a token at time of issuance. 
+Returns the metadata associated with a token. 
 
 ### Example
 ```ruby
@@ -257,11 +257,11 @@ api_instance = NeblioAPI::TestnetNTP1Api.new
 tokenid = 'tokenid_example' # String | TokenId to request metadata for
 
 begin
-  #Get Issuance Metadata of Token
-  result = api_instance.testnet_get_token_metadata_of_issuance(tokenid)
+  #Get Metadata of Token
+  result = api_instance.testnet_get_token_metadata(tokenid)
   p result
 rescue NeblioAPI::ApiError => e
-  puts "Exception when calling TestnetNTP1Api->testnet_get_token_metadata_of_issuance: #{e}"
+  puts "Exception when calling TestnetNTP1Api->testnet_get_token_metadata: #{e}"
 end
 ```
 

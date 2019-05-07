@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**get_address_info**](NTP1Api.md#get_address_info) | **GET** /ntp1/addressinfo/{address} | Information On a Neblio Address
 [**get_token_holders**](NTP1Api.md#get_token_holders) | **GET** /ntp1/stakeholders/{tokenid} | Get Addresses Holding a Token
 [**get_token_id**](NTP1Api.md#get_token_id) | **GET** /ntp1/tokenid/{tokensymbol} | Returns the tokenId representing a token
-[**get_token_metadata_of_issuance**](NTP1Api.md#get_token_metadata_of_issuance) | **GET** /ntp1/tokenmetadata/{tokenid} | Get Issuance Metadata of Token
+[**get_token_metadata**](NTP1Api.md#get_token_metadata) | **GET** /ntp1/tokenmetadata/{tokenid} | Get Metadata of Token
 [**get_token_metadata_of_utxo**](NTP1Api.md#get_token_metadata_of_utxo) | **GET** /ntp1/tokenmetadata/{tokenid}/{utxo} | Get UTXO Metadata of Token
 [**get_transaction_info**](NTP1Api.md#get_transaction_info) | **GET** /ntp1/transactioninfo/{txid} | Information On an NTP1 Transaction
 [**issue_token**](NTP1Api.md#issue_token) | **POST** /ntp1/issue | Builds a transaction that issues a new NTP1 Token
@@ -241,12 +241,12 @@ No authorization required
 
 
 
-# **get_token_metadata_of_issuance**
-> GetTokenMetadataResponse get_token_metadata_of_issuance(tokenid)
+# **get_token_metadata**
+> GetTokenMetadataResponse get_token_metadata(tokenid)
 
-Get Issuance Metadata of Token
+Get Metadata of Token
 
-Returns the metadata associated with a token at time of issuance. 
+Returns the metadata associated with a token. 
 
 ### Example
 ```ruby
@@ -257,11 +257,11 @@ api_instance = NeblioAPI::NTP1Api.new
 tokenid = 'tokenid_example' # String | TokenId to request metadata for
 
 begin
-  #Get Issuance Metadata of Token
-  result = api_instance.get_token_metadata_of_issuance(tokenid)
+  #Get Metadata of Token
+  result = api_instance.get_token_metadata(tokenid)
   p result
 rescue NeblioAPI::ApiError => e
-  puts "Exception when calling NTP1Api->get_token_metadata_of_issuance: #{e}"
+  puts "Exception when calling NTP1Api->get_token_metadata: #{e}"
 end
 ```
 
