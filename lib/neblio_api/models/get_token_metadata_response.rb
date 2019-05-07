@@ -17,6 +17,9 @@ module NeblioAPI
     # ID of the token
     attr_accessor :token_id
 
+    # Example UTXO containing this token.
+    attr_accessor :some_utxo
+
     # Decimal places the token is divisible to
     attr_accessor :divisibility
 
@@ -58,6 +61,7 @@ module NeblioAPI
     def self.attribute_map
       {
         :'token_id' => :'tokenId',
+        :'some_utxo' => :'someUtxo',
         :'divisibility' => :'divisibility',
         :'lock_status' => :'lockStatus',
         :'aggregation_policy' => :'aggregationPolicy',
@@ -78,6 +82,7 @@ module NeblioAPI
     def self.openapi_types
       {
         :'token_id' => :'String',
+        :'some_utxo' => :'String',
         :'divisibility' => :'Float',
         :'lock_status' => :'BOOLEAN',
         :'aggregation_policy' => :'String',
@@ -111,6 +116,10 @@ module NeblioAPI
 
       if attributes.key?(:'token_id')
         self.token_id = attributes[:'token_id']
+      end
+
+      if attributes.key?(:'some_utxo')
+        self.some_utxo = attributes[:'some_utxo']
       end
 
       if attributes.key?(:'divisibility')
@@ -185,6 +194,7 @@ module NeblioAPI
       return true if self.equal?(o)
       self.class == o.class &&
           token_id == o.token_id &&
+          some_utxo == o.some_utxo &&
           divisibility == o.divisibility &&
           lock_status == o.lock_status &&
           aggregation_policy == o.aggregation_policy &&
@@ -209,7 +219,7 @@ module NeblioAPI
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [token_id, divisibility, lock_status, aggregation_policy, total_supply, num_of_holders, num_of_transfers, num_of_issuance, num_of_burns, first_block, issuance_txid, issue_address, metadata_of_issuence, metadata_of_utxo].hash
+      [token_id, some_utxo, divisibility, lock_status, aggregation_policy, total_supply, num_of_holders, num_of_transfers, num_of_issuance, num_of_burns, first_block, issuance_txid, issue_address, metadata_of_issuence, metadata_of_utxo].hash
     end
 
     # Builds the object from hash
