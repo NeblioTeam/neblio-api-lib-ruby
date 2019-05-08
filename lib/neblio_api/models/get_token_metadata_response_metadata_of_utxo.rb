@@ -13,21 +13,21 @@ OpenAPI Generator version: 4.0.0-SNAPSHOT
 require 'date'
 
 module NeblioAPI
-  class BroadcastTxRequest
-    # Signed raw tx hex to broadcast
-    attr_accessor :tx_hex
+  # Metadata set for UTXO
+  class GetTokenMetadataResponseMetadataOfUtxo
+    attr_accessor :user_data
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'tx_hex' => :'txHex'
+        :'user_data' => :'userData'
       }
     end
 
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'tx_hex' => :'String'
+        :'user_data' => :'GetTokenMetadataResponseMetadataOfUtxoUserData'
       }
     end
 
@@ -35,19 +35,19 @@ module NeblioAPI
     # @param [Hash] attributes Model attributes in the form of hash
     def initialize(attributes = {})
       if (!attributes.is_a?(Hash))
-        fail ArgumentError, "The input argument (attributes) must be a hash in `NeblioAPI::BroadcastTxRequest` initialize method"
+        fail ArgumentError, "The input argument (attributes) must be a hash in `NeblioAPI::GetTokenMetadataResponseMetadataOfUtxo` initialize method"
       end
 
       # check to see if the attribute exists and convert string to symbol for hash key
       attributes = attributes.each_with_object({}) { |(k, v), h|
         if (!self.class.attribute_map.key?(k.to_sym))
-          fail ArgumentError, "`#{k}` is not a valid attribute in `NeblioAPI::BroadcastTxRequest`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
+          fail ArgumentError, "`#{k}` is not a valid attribute in `NeblioAPI::GetTokenMetadataResponseMetadataOfUtxo`. Please check the name to make sure it's valid. List of attributes: " + self.class.attribute_map.keys.inspect
         end
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'tx_hex')
-        self.tx_hex = attributes[:'tx_hex']
+      if attributes.key?(:'user_data')
+        self.user_data = attributes[:'user_data']
       end
     end
 
@@ -55,17 +55,12 @@ module NeblioAPI
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @tx_hex.nil?
-        invalid_properties.push('invalid value for "tx_hex", tx_hex cannot be nil.')
-      end
-
       invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @tx_hex.nil?
       true
     end
 
@@ -74,7 +69,7 @@ module NeblioAPI
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          tx_hex == o.tx_hex
+          user_data == o.user_data
     end
 
     # @see the `==` method
@@ -86,7 +81,7 @@ module NeblioAPI
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [tx_hex].hash
+      [user_data].hash
     end
 
     # Builds the object from hash
