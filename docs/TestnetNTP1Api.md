@@ -242,7 +242,7 @@ No authorization required
 
 
 # **testnet_get_token_metadata**
-> GetTokenMetadataResponse testnet_get_token_metadata(tokenid)
+> GetTokenMetadataResponse testnet_get_token_metadata(tokenid, opts)
 
 Get Metadata of Token
 
@@ -255,10 +255,13 @@ require 'neblio_api'
 
 api_instance = NeblioAPI::TestnetNTP1Api.new
 tokenid = 'tokenid_example' # String | TokenId to request metadata for
+opts = {
+  verbosity: 3.4 # Float | 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses
+}
 
 begin
   #Get Metadata of Token
-  result = api_instance.testnet_get_token_metadata(tokenid)
+  result = api_instance.testnet_get_token_metadata(tokenid, opts)
   p result
 rescue NeblioAPI::ApiError => e
   puts "Exception when calling TestnetNTP1Api->testnet_get_token_metadata: #{e}"
@@ -270,6 +273,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenid** | **String**| TokenId to request metadata for | 
+ **verbosity** | **Float**| 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses | [optional] 
 
 ### Return type
 
@@ -287,7 +291,7 @@ No authorization required
 
 
 # **testnet_get_token_metadata_of_utxo**
-> GetTokenMetadataResponse testnet_get_token_metadata_of_utxo(tokenid, utxo)
+> GetTokenMetadataResponse testnet_get_token_metadata_of_utxo(tokenid, utxo, opts)
 
 Get UTXO Metadata of Token
 
@@ -301,10 +305,13 @@ require 'neblio_api'
 api_instance = NeblioAPI::TestnetNTP1Api.new
 tokenid = 'tokenid_example' # String | TokenId to request metadata for
 utxo = 'utxo_example' # String | Specific UTXO to request metadata for
+opts = {
+  verbosity: 3.4 # Float | 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses
+}
 
 begin
   #Get UTXO Metadata of Token
-  result = api_instance.testnet_get_token_metadata_of_utxo(tokenid, utxo)
+  result = api_instance.testnet_get_token_metadata_of_utxo(tokenid, utxo, opts)
   p result
 rescue NeblioAPI::ApiError => e
   puts "Exception when calling TestnetNTP1Api->testnet_get_token_metadata_of_utxo: #{e}"
@@ -317,6 +324,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tokenid** | **String**| TokenId to request metadata for | 
  **utxo** | **String**| Specific UTXO to request metadata for | 
+ **verbosity** | **Float**| 0 (Default) is fastest, 1 contains token stats, 2 contains token holding addresses | [optional] 
 
 ### Return type
 

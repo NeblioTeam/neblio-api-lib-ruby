@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **divisibility** | **Float** | Decimal places the token is divisible to | [optional] 
 **lock_status** | **BOOLEAN** | Whether issuance of more tokens is locked | [optional] 
 **aggregation_policy** | **String** | Whether the tokens are aggregatable | [optional] 
+**initial_issuance_amount** | **Float** | Total tokens issued in initial issuance | [optional] 
 **total_supply** | **Float** | Total number of tokens in supply | [optional] 
 **num_of_holders** | **Float** | Total number of addresses this token is held at | [optional] 
 **num_of_transfers** | **Float** | Total number of transactions of this token | [optional] 
@@ -16,7 +17,7 @@ Name | Type | Description | Notes
 **first_block** | **Float** | Block number token was issued in | [optional] 
 **issuance_txid** | **String** | TXID the token was issued with | [optional] 
 **issue_address** | **String** | Address that issued the tokens | [optional] 
-**metadata_of_issuence** | [**GetTokenMetadataResponseMetadataOfIssuence**](GetTokenMetadataResponseMetadataOfIssuence.md) |  | [optional] 
+**metadata_of_issuance** | [**GetTokenMetadataResponseMetadataOfIssuance**](GetTokenMetadataResponseMetadataOfIssuance.md) |  | [optional] 
 **metadata_of_utxo** | [**GetTokenMetadataResponseMetadataOfUtxo**](GetTokenMetadataResponseMetadataOfUtxo.md) |  | [optional] 
 
 ## Code Sample
@@ -29,6 +30,7 @@ instance = NeblioAPI::GetTokenMetadataResponse.new(token_id: null,
                                  divisibility: null,
                                  lock_status: null,
                                  aggregation_policy: null,
+                                 initial_issuance_amount: null,
                                  total_supply: null,
                                  num_of_holders: null,
                                  num_of_transfers: null,
@@ -37,7 +39,7 @@ instance = NeblioAPI::GetTokenMetadataResponse.new(token_id: null,
                                  first_block: null,
                                  issuance_txid: null,
                                  issue_address: null,
-                                 metadata_of_issuence: null,
+                                 metadata_of_issuance: null,
                                  metadata_of_utxo: null)
 ```
 

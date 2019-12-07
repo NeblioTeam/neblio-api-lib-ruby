@@ -1,4 +1,4 @@
-# NeblioAPI::GetTokenMetadataResponseMetadataOfIssuenceDataUserDataMeta
+# NeblioAPI::GetTokenMetadataResponseMetadataOfIssuanceDataUserDataMeta
 
 ## Properties
 Name | Type | Description | Notes
@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'NeblioAPI'
 
-instance = NeblioAPI::GetTokenMetadataResponseMetadataOfIssuenceDataUserDataMeta.new(key: null,
+instance = NeblioAPI::GetTokenMetadataResponseMetadataOfIssuanceDataUserDataMeta.new(key: null,
                                  value: null)
 ```
 
